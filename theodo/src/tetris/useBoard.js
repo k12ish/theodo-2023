@@ -125,21 +125,22 @@ export function useBoard() {
 
         for (let y = 0; y < ROW_COUNT; y++) {
             let rowHasWord = false;
+            const duplicateScene = copyScene(newScene);
             for (let x = 0; x < COLUMN_COUNT - 1; x++) {
-                if (newScene[y][x]!==0) {
+                if (duplicateScene[y][x]!==0) {
                     for (let z = COLUMN_COUNT - 1; z > 0; z--) {
-                        if (newScene[y][z] === 0) {
-                            newScene[y].splice(z, 1);
+                        if (duplicateScene[y][z] === 0) {
+                            duplicateScene[y].splice(z, 1);
                         }
                     }
-                    for (let z = COLUMN_COUNT - 1; z > 0; z--) {
-                        const string = newScene[y].join()
-                        let word = string.replace(/,/g,'');
-                        rowHasWord = checkIfWord(word);
-                        if (rowHasWord) {
-                            removeRow(y);
-                        }
+                    const string = duplicateScene[y].join()
+                    let word = string.replace(/,/g,'');
+                    console.log(word);
+                    rowHasWord = checkIfWord(word);
+                    if (rowHasWord) {
+                        removeRow(y);
                     }
+                    break;
                 }
             }
         }
