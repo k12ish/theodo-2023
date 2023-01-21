@@ -1,11 +1,13 @@
+import {random_letter} from "../utils/letterPicker";
+
 
 const SHAPES = [
     {
         shape: [
-            {x:0, y:0},
-            {x:0, y:1},
-            {x:1, y:0},
-            {x:1, y:1}
+            {x:0, y:0, letter: ''},
+            {x:0, y:1, letter: ''},
+            {x:1, y:0, letter: ''},
+            {x:1, y:1, letter: ''}
         ],
         width: 2,
         height: 2,
@@ -23,10 +25,10 @@ const SHAPES = [
     },
     {
         shape: [
-            {x:0, y:0},
-            {x:0, y:1},
-            {x:0, y:2},
-            {x:1, y:2}
+            {x:0, y:0, letter: ''},
+            {x:0, y:1, letter: ''},
+            {x:0, y:2, letter: ''},
+            {x:1, y:2, letter: ''}
         ],
         width: 1,
         height: 3

@@ -7,6 +7,9 @@ const Board = () => {
     const [display, score, onKeyDown] = useBoard();
     const eBoard = useRef();
 
+    console.log(display);
+
+
     useEffect(focusBoard, []);
 
     function focusBoard() {
@@ -34,17 +37,18 @@ const Row = memo( props => {
 
 const Cell = memo( props => {
     const count = useRef(0);
-
     count.current++;
 
-    const value = props.cell ? props.cell : 0;
+
+
+    const value = props.cell ? 1 : 0;
 
     var letter = random_letter();
     
     return (
         <>
             <span className={`t-cell t-cell-${value}`}>
-                {value === 1 && <span className='letter'>{letter}</span>}
+                {value !== 0 && <span className='letter'>{props.cell}</span>}
             </span>
         </>
     );

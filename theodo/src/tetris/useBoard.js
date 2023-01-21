@@ -1,8 +1,9 @@
 import {useEffect, useState} from 'react';
 import {useInterval} from "./useInterval";
 import {randomShape} from "./shapeFactory";
+import { random_letter } from '../utils/letterPicker';
 
-export const ROW_COUNT = 20;
+export const ROW_COUNT = 24;
 export const COLUMN_COUNT = 10;
 
 function copyScene(scene) {
@@ -17,18 +18,22 @@ function mergeIntoStage(stage, shape, position) {
         const y = point.y + position.y;
 
         if (x<0 || y<0 || x>=COLUMN_COUNT || y>=ROW_COUNT) { return; }
+        
+        if (y < 4){ point.letter = random_letter()};  
 
-        res = updateStage(res, x, y, 1);
+        res = updateStage(res, x, y, (1, point.letter));
     });
+
 
     return res;
 }
 
-function updateStage(stage, x, y, value) {
-    if (stage[y][x]===value) { return stage; }
+function updateStage(stage, x, y, cell) {
+    console.log(cell);
+    if (stage[y][x]===cell) { return stage; }
     const res = stage.slice();
     res[y] = stage[y].slice();
-    res[y][x] = value;
+    res[y][x] = cell;
     return res;
 }
 
@@ -91,7 +96,6 @@ export function useBoard() {
             shape: newPoints,
             width: shape.width,
             height: shape.height,
-            letters: ['A', 'R', 'S', 'E']
         };
 
         if (validPosition(position, newShape)) {
