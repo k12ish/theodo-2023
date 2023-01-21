@@ -38,12 +38,7 @@ const Row = memo( props => {
 const Cell = memo( props => {
     const count = useRef(0);
     count.current++;
-
-
-
     const value = props.cell ? 1 : 0;
-
-    var letter = random_letter();
     
     return (
         <>
