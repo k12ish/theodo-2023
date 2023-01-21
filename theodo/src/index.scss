@@ -63,7 +63,11 @@ body {
 
 
 .t-parent {
-    display: flex;
+    display: inline-block;
+}
+
+.t-parent-2{
+    display: inline-block;
 }
 
 element.style {
@@ -72,5 +76,5 @@ element.style {
 }
 
 .background {
-    height: 100vh;
+    display: flex;
 }

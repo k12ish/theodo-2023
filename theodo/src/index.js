@@ -5,8 +5,11 @@ import Board from "./tetris/board";
 
 function Game() {
     return (
-        <div className='background'>
+        <div className='container'>
             <div className="t-parent">
+                <Board/>
+            </div>
+            <div className="t-parent-2">
                 <Board/>
             </div>
         </div>
