@@ -1,6 +1,7 @@
 body {
     font: 14px "Century Gothic", Futura, sans-serif;
     margin: 0px;
+    height:100vh;
 }
 
 .t-row {
@@ -71,6 +72,5 @@ element.style {
 }
 
 .background {
-    background-size: cover;
-    background-color: blue;
+    height: 100vh;
 }
