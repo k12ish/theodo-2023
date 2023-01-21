@@ -3,7 +3,7 @@ import {useInterval} from "./useInterval";
 import {randomShape} from "./shapeFactory";
 import { random_letter } from '../utils/letterPicker';
 
-export const ROW_COUNT = 15;
+export const ROW_COUNT = 20;
 export const COLUMN_COUNT = 10;
 
 function copyScene(scene) {
@@ -41,7 +41,7 @@ function createEmptyScene() {
     return Array.from(Array(ROW_COUNT), ()=> Array(COLUMN_COUNT).fill(0) );
 }
 
-export function useBoard() {
+export function useBoard2() {
 
     const [scene, setScene] = useState(()=> createEmptyScene() );
     const [shape, setShape] = useState(()=> randomShape() );
@@ -143,19 +143,19 @@ export function useBoard() {
 
     function onKeyDown(event) {
         switch (event.key) {
-            case 'ArrowRight':
+            case 'd':
                 movePosition(1,0);
                 event.preventDefault();
                 break;
-            case 'ArrowLeft':
+            case 'a':
                 movePosition(-1,0);
                 event.preventDefault();
                 break;
-            case 'ArrowDown':
+            case 's':
                 movePosition(0,1);
                 event.preventDefault();
                 break;
-            case 'ArrowUp':
+            case 'w':
                 rotateShape();
                 event.preventDefault();
                 break;

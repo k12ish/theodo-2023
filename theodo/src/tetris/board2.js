@@ -1,10 +1,10 @@
 import React, { memo, useEffect, useRef } from 'react';
-import {useBoard} from "./useBoard";
+import {useBoard2} from "./useBoard2";
 import {random_letter} from "../utils/letterPicker";
 
-const Board = () => {
+const Board2 = () => {
 
-    const [display, score, onKeyDown] = useBoard();
+    const [display, score, onKeyDown] = useBoard2();
     const eBoard = useRef();
 
     console.log(display);
@@ -18,8 +18,8 @@ const Board = () => {
 
     return (
         <div ref={eBoard} className={'t-board'} tabIndex={0} onKeyDown={ onKeyDown }>
-            <div className='score-board'>
-                <span className="t-score-label">Score:   </span>
+            <div>
+                <span className="t-score-label">Score: </span>
                 <span className="t-score-label">{score.toLocaleString()}</span>
             </div>
             {display.map( (row, index) => <Row row={row} key={index}/>)}
@@ -54,4 +54,4 @@ const Cell = memo( props => {
     );
 });
 
-export default memo(Board);
+export default memo(Board2);

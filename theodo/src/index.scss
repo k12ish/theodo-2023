@@ -12,7 +12,6 @@ body {
     display: inline-block;
     margin: 20px;
     padding: 20px;
-    border: 5px solid turquoise;
     border-radius: 20px;
 }
 
@@ -31,11 +30,7 @@ body {
 }
 
 .t-cell-1 {
-    background-color: black;
-    border-bottom: 1px solid #00f;
-    border-right: 1px solid #00f;
-    border-top: 1px solid #00b;
-    border-left: 1px solid #00b;
+    background-color: #301934;
 
     align-items: center;
     justify-content: center;
@@ -54,16 +49,26 @@ body {
     background-color: red;
 }
 
+.score-board {
+    display: flex;
+    justify-content: center;
+}
+
 .t-score-label {
     font-weight: bold;
     font-size: 25px;
-    color: white;
+    color: black;
     padding-bottom: 10px;
 }
 
 
 .t-parent {
     display: inline-block;
+    margin-top: 80px;
+    background-image: linear-gradient(red, orange);
+    box-shadow: 15px 15px;
+    border-radius: 50px;
+
 }
 
 .t-parent-2{
@@ -75,6 +80,75 @@ element.style {
     left: 0px;
 }
 
-.background {
+.container {
+
     display: flex;
+    justify-content: center;
+    height: 720px;    
+}
+
+.circle-container{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 150px;
+}
+
+.circle {
+    background-color: #0D0907;
+    height: 50px;
+    width: 50px;
+    justify-self: center;
+    border-radius: 25px;
+    margin-bottom: 150px;
+    position: absolute;
+}
+
+.inner-circle {
+    background-color: black;
+    margin-top: 5px;
+        height: 40px;
+        width: 40px;
+        justify-self: center;
+        border-radius: 20px;
+        margin-bottom: 140px;
+        z-index: 3;
+}
+
+
+.title-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    font-size: 50px;
+    font-size: 75px;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 0 0 80px red,0 0 30px FireBrick,0 0 6px DarkRed;
+    color: turquoise;
+}
+
+.lines {
+    margin-top: 150px;
+    $color: #59c1fe;
+    position: fixed;
+    width: 30vw;
+    height: 2em;
+    background: linear-gradient(rgba($color, 0.2) 20%, $color 40%, $color 60%, rgba($color, 0.2) 80%);
+    background-size: 1px 0.5em;
+    box-shadow: 0 0 1em rgba($color, 0.4);
+    transform: translateY(-1em);
+    left: 35%;
+}
+
+.retro {
+    font-family: 'Mr Dafoe';
+  margin: 0;
+  font-size: 5.5em;
+  color: white;
+  text-shadow: 0 0 0.05em #fff, 0 0 0.2em #fe05e1, 0 0 0.3em #fe05e1;
 }
