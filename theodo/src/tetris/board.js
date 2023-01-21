@@ -38,7 +38,11 @@ const Cell = memo( props => {
 
     const value = props.cell ? props.cell : 0;
     return (
-        <span className={`t-cell t-cell-${value}`}></span>
+        <>
+            <span className={`t-cell t-cell-${value}`}>
+                {value == 1 && <span className='letter'>A</span>}
+            </span>
+        </>
     );
 });
 
