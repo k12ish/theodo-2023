@@ -11,7 +11,8 @@ body {
     display: inline-block;
     margin: 20px;
     padding: 20px;
-    border: 1px solid grey;
+    border: 5px solid turquoise;
+    border-radius: 20px;
 }
 
 .t-cell {
@@ -19,15 +20,17 @@ body {
     width: 30px;
     height: 30px;
     box-sizing: border-box;
-    color: grey;
+
 }
 
 .t-cell-0 {
-    background-color: black;
+    background-color: white;
+
+    border: 1px solid grey;
 }
 
 .t-cell-1 {
-    background-color: #00d;
+    background-color: black;
     border-bottom: 1px solid #00f;
     border-right: 1px solid #00f;
     border-top: 1px solid #00b;
@@ -52,11 +55,11 @@ body {
 
 .t-score-label {
     font-weight: bold;
+    font-size: 25px;
+    color: white;
+    padding-bottom: 10px;
 }
 
-.t-score-label {
-    font-weight: bold;
-}
 
 .t-parent {
     display: flex;
@@ -65,4 +68,9 @@ body {
 element.style {
     width: 44px;
     left: 0px;
+}
+
+.background {
+    background-size: cover;
+    background-color: blue;
 }

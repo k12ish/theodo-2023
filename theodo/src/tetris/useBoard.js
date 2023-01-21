@@ -3,7 +3,7 @@ import {useInterval} from "./useInterval";
 import {randomShape} from "./shapeFactory";
 import { random_letter } from '../utils/letterPicker';
 
-export const ROW_COUNT = 24;
+export const ROW_COUNT = 20;
 export const COLUMN_COUNT = 10;
 
 function copyScene(scene) {
