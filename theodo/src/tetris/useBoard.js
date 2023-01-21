@@ -30,7 +30,6 @@ function mergeIntoStage(stage, shape, position) {
 }
 
 function updateStage(stage, x, y, cell) {
-    console.log(cell);
     if (stage[y][x]===cell) { return stage; }
     const res = stage.slice();
     res[y] = stage[y].slice();

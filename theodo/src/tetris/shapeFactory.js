@@ -1,6 +1,3 @@
-import {random_letter} from "../utils/letterPicker";
-
-
 const SHAPES = [
     {
         shape: [

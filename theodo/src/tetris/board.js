@@ -1,15 +1,10 @@
 import React, { memo, useEffect, useRef } from 'react';
 import {useBoard} from "./useBoard";
-import {random_letter} from "../utils/letterPicker";
 
 const Board = () => {
 
     const [display, score, onKeyDown] = useBoard();
     const eBoard = useRef();
-
-    console.log(display);
-
-
     useEffect(focusBoard, []);
 
     function focusBoard() {
@@ -38,12 +33,7 @@ const Row = memo( props => {
 const Cell = memo( props => {
     const count = useRef(0);
     count.current++;
-
-
-
     const value = props.cell ? 1 : 0;
-
-    var letter = random_letter();
     
     return (
         <>
