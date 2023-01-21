@@ -1,3 +1,8 @@
-export PUBLIC_URL="https://a77a-131-111-5-145.eu.ngrok.io/" 
+
+if [[ -z $PUBLIC_URL ]]; then
+  echo "export PUBLIC_URL to continue"
+  exit 1
+fi
+
 cd theodo/ && npm run build
 cd ../server && cargo run
