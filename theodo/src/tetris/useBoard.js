@@ -134,14 +134,15 @@ export function useBoard() {
                         }
                     }
                     const string = duplicateScene[y].join()
-                    let word = string.replace(/,/g,'');
-                    for (let x = 0; x < COLUMN_COUNT - 1; x++) {
-                        for (let z = COLUMN_COUNT - 1; z > 0; z--) {
-                            word = word.slice(x, z);
-                            console.log(word);
-                            rowHasWord = checkIfWord(word);
-                            if (rowHasWord) {
+                    const word = string.replace(/,/g,'');
+                    for (let i = 0; i < COLUMN_COUNT - 1; i++) {
+                        for (let z = COLUMN_COUNT - 1; z > i; z--) {
+                            let newword = word.slice(i, z);
+                            console.log(newword);
+                            rowHasWord = checkIfWord(newword);
+                            if (rowHasWord && newword.length >2) {
                                 removeRow(y);
+                                break;
                             }
                         }
                     }
