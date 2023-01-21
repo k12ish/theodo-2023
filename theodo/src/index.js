@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
 import Board from "./tetris/board";
-import Board2 from "./tetris/board2";
 
 function Game() {
     return (
