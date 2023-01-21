@@ -32,6 +32,15 @@ body {
     border-right: 1px solid #00f;
     border-top: 1px solid #00b;
     border-left: 1px solid #00b;
+
+    align-items: center;
+    justify-content: center;
+    display: flex;
+
+    .letter {
+        color: white;
+
+    }
 }
 
 .t-cell-2 {

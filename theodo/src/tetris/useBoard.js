@@ -90,7 +90,8 @@ export function useBoard() {
         const newShape = {
             shape: newPoints,
             width: shape.width,
-            height: shape.height
+            height: shape.height,
+            letters: ['A', 'R', 'S', 'E']
         };
 
         if (validPosition(position, newShape)) {
