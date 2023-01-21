@@ -131,7 +131,7 @@ async fn main() {
     let assets_dir = PathBuf::from(env!("CARGO_MANIFEST_DIR"))
         .join("..")
         .join("theodo")
-        .join("public");
+        .join("build");
     let app = Router::new()
         .fallback_service(
             get_service(ServeDir::new(assets_dir).append_index_html_on_directories(true))
