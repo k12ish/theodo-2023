@@ -2,6 +2,7 @@ import {useEffect, useState} from 'react';
 import {useInterval} from "./useInterval";
 import {randomShape} from "./shapeFactory";
 import { random_letter } from '../utils/letterPicker';
+import {checkIfWord} from '../utils/wordDetection';
 
 export const ROW_COUNT = 15;
 export const COLUMN_COUNT = 10;
@@ -124,15 +125,23 @@ export function useBoard() {
         };
 
         for (let y = 0; y < ROW_COUNT; y++) {
-            let rowHasEmptySpace = false;
+            let rowHasWord = false;
             for (let x = 0; x < COLUMN_COUNT - 1; x++) {
-                if (newScene[y][x]===0) {
-                    rowHasEmptySpace = true;
-                    break;
+                if (newScene[y][x]!==0) {
+                    for (let z = COLUMN_COUNT - 1; z > 0; z--) {
+                        if (newScene[y][z] === 0) {
+                            newScene[y].splice(z, 1);
+                        }
+                    }
+                    for (let z = COLUMN_COUNT - 1; z > 0; z--) {
+                        const string = newScene[y].join()
+                        let word = string.replace(/,/g,'');
+                        rowHasWord = checkIfWord(word);
+                        if (rowHasWord) {
+                            removeRow(y);
+                        }
+                    }
                 }
-            }
-            if (!rowHasEmptySpace) {
-                removeRow(y);
             }
         }
 

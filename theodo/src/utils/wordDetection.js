@@ -1,6 +1,6 @@
 var checkWord = require('check-if-word');
-words = checkWord('en');
+var words = checkWord('en');
 
-function checkIfWord(word) {
+export function checkIfWord(word) {
     return words.check(word);
 }
